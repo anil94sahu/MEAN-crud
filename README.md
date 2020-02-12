@@ -20,3 +20,8 @@ node app.js
 localhost:3000/
 localhost:4200
 
+npm install
+
+show collections
+table Name : contacts
+url : http://localhost:3000/api/contacts
