@@ -1,0 +1,32 @@
+<div class="contianer bg-danger" style="margin:25px">
+    <form (submit) = "addContact()">
+        <div class="form-group">
+            <label>first_name</label>
+            <input type="text" [(ngModel)]="first_name" name="first_name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>last_name</label>
+            <input type="text" [(ngModel)]="last_name" name="last_name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>phone</label>
+            <input type="text" [(ngModel)]="phone" name="phone" class="form-control" />
+        </div>
+        <input type="submit" value="Add" />
+    </form>
+</div>
+{{contacts | json}}
+<br>
+<br>
+<div class="container bg-primary" >
+    <div  ngFor = "let contact of contacts; let i = index">
+        <div class="col-md-3">{{contact.first_name}}</div>
+        <div class="col-md-3">{{contact.last_name}}</div>
+        <div class="col-md-3">{{contact.phone}}</div>
+        <div class="col-md-3">
+            <input type="button" value="delete" (click)="deleteContact(contact)" >
+        </div>
+    </div>
+</div>
